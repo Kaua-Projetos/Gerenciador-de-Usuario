@@ -58,9 +58,17 @@ body {
     color: #6b7280;
 }
 
+/* Tabela responsiva */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 .table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 700px; /* Garante que a tabela tenha um tamanho mínimo, forçando rolagem em telas pequenas */
 }
 
 .table th {
@@ -71,6 +79,7 @@ body {
     text-transform: uppercase;
     color: #6b7280;
     border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap; /* Evita quebra de texto em cabeçalhos */
 }
 
 .table td {
@@ -103,11 +112,13 @@ body {
     color: #6b7280;
 }
 
-.button-container {
-    text-align: center; 
+.button-column {
+    text-align: center;
+    white-space: nowrap; /* Evita quebra de texto no botão */
+    min-width: 100px; /* Garante um tamanho mínimo para a coluna do botão */
 }
 
-.excluirUser  {
+.excluirUser {
     background-color: #2563eb; 
     color: white; 
     border: none; 
@@ -115,22 +126,26 @@ body {
     padding: 0.5rem 1rem; 
     cursor: pointer;
     transition: background-color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
 }
 
 .excluirUser:hover {
     background-color: #1d4ed8; 
 }
 
-.containerUser  {
+.containerUser {
     text-align: center;
-    margin-top: 1rem; 
+    margin: 1rem; 
+    padding: 1rem;
 }
 
-.adcUser  {
+.adcUser {
     display: inline-block;
 }
 
-.adicionarUser  {
+.adicionarUser {
     background-color: #28a745; 
     color: white; 
     border: none; 
@@ -144,4 +159,29 @@ body {
 
 .adicionarUser:hover {
     background-color: #218838; 
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .adicionarUser {
+        padding: 0.75rem 2rem; /* Reduz o tamanho do botão em telas pequenas */
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .table-responsive {
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .table-responsive::after {
+        content: "Arraste para o lado para ver mais →";
+        display: block;
+        text-align: center;
+        padding: 0.5rem;
+        color: #6b7280;
+        font-size: 0.75rem;
+        background-color: #f9fafb;
+    }
 }
