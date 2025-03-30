@@ -31,4 +31,8 @@ export class CriarUserComponent {
       }
     })
   }
+
+  voltar() {
+    this.router.navigate(['/usuario']);
+  }
 }
