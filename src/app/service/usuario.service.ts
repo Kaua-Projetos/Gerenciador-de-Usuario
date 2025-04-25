@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  private apiUrl = 'https://apiusuario.fly.dev';
+  private apiUrl = 'https://apiusuario.fly.dev/usuario';
 
   constructor(private http: HttpClient) {}
 
